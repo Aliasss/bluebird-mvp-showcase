@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#2D6A4F" />
+  <title>오프라인 - Project Bluebird</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #f2f2f7);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    
+    .container {
+      max-width: 400px;
+      text-align: center;
+    }
+    
+    .icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 32px;
+      opacity: 0.6;
+    }
+    
+    .icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 12px;
+    }
+    
+    p {
+      font-size: 16px;
+      color: #8e8e93;
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+    
+    .button {
+      display: inline-block;
+      background: #2D6A4F;
+      color: white;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 16px;
+      text-decoration: none;
+      transition: transform 0.1s;
+    }
+    
+    .button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="40" stroke="#2D6A4F" stroke-width="2" fill="none" opacity="0.3"/>
+        <path d="M 50 30 L 50 50 L 65 50" stroke="#2D6A4F" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 30 70 L 40 70 M 60 70 L 70 70" stroke="#2D6A4F" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    
+    <h1>오프라인 상태입니다</h1>
+    <p>
+      인터넷 연결을 확인해주세요.<br/>
+      연결되면 자동으로 동기화됩니다.
+    </p>
+    
+    <a href="/" class="button">다시 시도</a>
+  </div>
+  
+  <script>
+    // 온라인 상태가 되면 자동 새로고침
+    window.addEventListener('online', () => {
+      window.location.reload();
+    });
+  </script>
+</body>
+</html>

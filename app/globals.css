@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── 색 토큰 팔레트 (라이트) ──────────────────────────────────────────────
+   값은 공백 구분 RGB 채널 → tailwind.config 의 rgb(var(--c-*) / <alpha-value>) 와 맞물려
+   bg-primary/50 같은 투명도 유틸까지 작동. .dark 블록이 동일 키를 다크 값으로 덮어쓴다.
+   라이트 값은 기존 production 과 1:1 동일(회귀 0). */
+:root {
+  /* body 직접 사용(쉼표 포맷 유지) */
+  --foreground-rgb: 15, 23, 42;
+  --background-rgb: 248, 250, 252;
+
+  /* 브랜드 그린 */
+  --c-primary: 45 106 79; /* #2D6A4F */
+  --c-primary-dark: 36 87 65; /* #245741 */
+  --c-primary-light: 64 145 108; /* #40916C */
+  --c-primary-tint: 234 242 238; /* #EAF2EE */
+  --c-primary-border: 203 222 213; /* #CBDED5 */
+  --c-primary-fg: 255 255 255; /* #FFFFFF — primary 위 글자 */
+
+  --c-system2: 45 106 79;
+  --c-system2-dark: 36 87 65;
+  --c-system2-light: 64 145 108;
+
+  --c-success: 45 106 79;
+  --c-success-dark: 36 87 65;
+  --c-success-light: 64 145 108;
+
+  --c-warning: 217 119 6; /* #D97706 */
+  --c-warning-dark: 180 83 9; /* #B45309 */
+  --c-warning-light: 252 211 77; /* #FCD34D */
+
+  --c-danger: 220 38 38; /* #DC2626 */
+  --c-danger-dark: 185 28 28; /* #B91C1C */
+  --c-danger-light: 248 113 113; /* #F87171 */
+
+  --c-distortion: 225 29 72; /* #E11D48 */
+
+  --c-surface: 255 255 255; /* #FFFFFF — 카드/패널 */
+
+  --c-bg: 248 250 252; /* #F8FAFC */
+  --c-bg-secondary: 241 245 249; /* #F1F5F9 */
+  --c-bg-tertiary: 226 232 240; /* #E2E8F0 */
+
+  --c-text: 15 23 42; /* #0F172A */
+  --c-text-secondary: 71 85 105; /* #475569 */
+  --c-text-tertiary: 100 116 139; /* #64748B */
+
+  --shadow-card: 0 2px 8px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-elev2: 0 8px 24px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+/* ── 색 토큰 팔레트 (다크) — 부드러운 차콜/슬레이트, WCAG AA 검증 ────────────
+   그린은 어두운 배경 가독을 위해 밝게(#52B788). 버튼은 primary-fg(짙은 잉크)로 대비 확보. */
+.dark {
+  --foreground-rgb: 241, 245, 249;
+  --background-rgb: 15, 23, 42;
+
+  --c-primary: 82 183 136; /* #52B788 — 강조 텍스트/아이콘/버튼 배경 */
+  --c-primary-dark: 64 145 108; /* #40916C — hover */
+  --c-primary-light: 116 198 157; /* #74C69D */
+  --c-primary-tint: 21 41 31; /* #15291F — 다크 그린 틴트 패널 */
+  --c-primary-border: 47 94 70; /* #2F5E46 */
+  --c-primary-fg: 11 26 18; /* #0B1A12 — 밝은 그린 버튼 위 짙은 글자 */
+
+  --c-system2: 82 183 136;
+  --c-system2-dark: 64 145 108;
+  --c-system2-light: 116 198 157;
+
+  --c-success: 82 183 136;
+  --c-success-dark: 64 145 108;
+  --c-success-light: 116 198 157;
+
+  --c-warning: 245 158 11; /* #F59E0B */
+  --c-warning-dark: 217 119 6;
+  --c-warning-light: 252 211 77;
+
+  /* danger 는 양 모드 동일 — bg-danger+흰글자 버튼(탈퇴 등)의 대비 보존(흰글자 5.2:1). */
+  --c-danger: 220 38 38; /* #DC2626 */
+  --c-danger-dark: 185 28 28; /* #B91C1C */
+  --c-danger-light: 248 113 113; /* #F87171 */
+
+  --c-distortion: 251 113 133; /* #FB7185 */
+
+  --c-surface: 30 41 59; /* #1E293B — 카드 */
+
+  --c-bg: 15 23 42; /* #0F172A — 페이지 */
+  --c-bg-secondary: 30 41 59; /* #1E293B */
+  --c-bg-tertiary: 51 65 85; /* #334155 — 구분선/테두리 */
+
+  --c-text: 241 245 249; /* #F1F5F9 */
+  --c-text-secondary: 203 213 225; /* #CBD5E1 */
+  --c-text-tertiary: 148 163 184; /* #94A3B8 */
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-elev2: 0 10px 28px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.45);
+
+  /* 다크에서 네이티브 UI(폼 컨트롤·스크롤바)도 다크 스킴 */
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (max-width: 639px) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    /* 단색 배경 — 이전 그라디언트(차이 거의 없는데 복잡도만 추가)는 제거 */
+    background-color: rgb(var(--background-rgb));
+    /* 한국어 본문 미세 조정 — Pretendard 권장 letter-spacing.
+       Tailwind의 tracking-* 유틸리티는 그대로 작동하며, 적용 시 override 됨. */
+    letter-spacing: -0.011em;
+    /* 한·영 혼용 문장의 자간 자연스러움 + 숫자 폭 균일 */
+    font-feature-settings: 'ss01', 'tnum';
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* 모바일 최적화 */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Safe Area 지원 */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .pl-safe {
+    padding-left: env(safe-area-inset-left);
+  }
+  
+  .pr-safe {
+    padding-right: env(safe-area-inset-right);
+  }
+}

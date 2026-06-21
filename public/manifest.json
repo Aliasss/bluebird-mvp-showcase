@@ -1,0 +1,23 @@
+{
+  "name": "Project Bluebird",
+  "short_name": "Bluebird",
+  "description": "결정을 기록하고, 그 결정이 맞았는지 결과로 확인하는 도구",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2D6A4F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["health", "lifestyle", "productivity"],
+  "lang": "ko-KR",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

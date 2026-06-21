@@ -1,0 +1,59 @@
+{
+  "name": "project-bluebird-mvp",
+  "version": "1.0.0",
+  "description": "AI 기반 인지 패턴 분석으로 사고 습관을 관찰하고 기록하는 PWA",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "lint:copy": "tsx scripts/lint-copy.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "pwa",
+    "cognitive",
+    "psychology",
+    "autonomy",
+    "ai"
+  ],
+  "author": "Project Bluebird Team",
+  "license": "MIT",
+  "dependencies": {
+    "@ducanh2912/next-pwa": "^10.2.9",
+    "@google/generative-ai": "^0.24.1",
+    "@supabase/auth-helpers-nextjs": "^0.15.0",
+    "@supabase/ssr": "^0.10.2",
+    "@supabase/supabase-js": "^2.103.0",
+    "@vercel/analytics": "^2.0.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.8.0",
+    "next": "^16.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-is": "^19.2.5",
+    "recharts": "^3.8.1",
+    "tailwind-merge": "^3.5.0",
+    "web-push": "^3.6.7",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/web-push": "^3.6.4",
+    "@vitest/ui": "^2.1.9",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.9",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.20.3",
+    "typescript": "^6.0.2",
+    "vitest": "^2.1.9"
+  },
+  "overrides": {
+    "serialize-javascript": "7.0.5",
+    "terser-webpack-plugin": "5.4.0"
+  }
+}
